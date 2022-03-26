@@ -1,7 +1,10 @@
 package com.geektach.newsapp;
 
+import android.opengl.ETC1;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,7 +21,10 @@ import com.geektach.newsapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Prefs prefs;
     private ActivityMainBinding binding;
+    private EditText Et;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     binding.navView.setVisibility(View.GONE);
                     getSupportActionBar().hide();
                 }else {
-                    binding.navView.setVisibility(View.GONE);
+                    binding.navView.setVisibility(View.VISIBLE);
                     getSupportActionBar().show();
                 }
             }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,21 +18,20 @@ import com.geektach.newsapp.models.Board;
 import java.util.ArrayList;
 
 public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> {
-
     private ArrayList<Board> list;
 
     public BoardAdapter() {
         list = new ArrayList<>();
-        list.add(new Board("Качок Доге и плачущий Чимс", "Мемом с собаками породы сиба-ину пользователи сравнивали настоящий момент и прошлое.", R.drawable.photo1));
-        list.add(new Board("Танцующие носильщики гробов", "Танцующие с гробом темнокожие парни были популярны практически весь год.", R.drawable.photo2));
-        list.add(new Board("Наташ, ты спишь?", "Мем «Наташ, ты спишь» стал абсолютным хитом в апреле:", R.drawable.photo3));
+        list.add(new Board("Качок Доге и плачущий Чимс", "Мемом с собаками породы сиба-ину пользователи сравнивали настоящий момент и прошлое. Победа всегда на стороне Доге, и он, как правило, олицетворяет прошедшие времена.", R.drawable.photo_1));
+        list.add(new Board("Танцующие носильщики гробов", "Танцующие с гробом темнокожие парни были популярны практически весь год. Первые смешные видео с их участием появились в конце февраля. Популярность они набрали в связи с новостями о коронавирусе.", R.drawable.photo_2));
+        list.add(new Board("Наташ, ты спишь?", "Мем «Наташ, ты спишь» стал абсолютным хитом в апреле: с его помощью шутили про коронавирус, самоизоляцию, цифровые пропуска. Потом, в течение года, используя этот шаблон, пользователи обращались к самым разным темам. Этот мем — народный, по мнению Максима Корнева, хотя его и быстро «затаскали» все, кому не лень.", R.drawable.photo_3));
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pager_board, parent, false);
-        return new ViewHolder(view);
+        ItemPagerBoardBinding binding = ItemPagerBoardBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -52,9 +52,10 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
 
         private ItemPagerBoardBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            btn_start = itemView.findViewById(R.id.btn_start);
+        public ViewHolder(@NonNull ItemPagerBoardBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+            textDisc = itemView.findViewById(R.id.text_disc);
             textTitle = itemView.findViewById(R.id.textTitle);
             btn_start = itemView.findViewById(R.id.btn_start);
             btn_start.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +68,9 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
 
         public void bind(int position) {
             Board board = list.get(position);
+            binding.textDisc.setText(board.getDesc());
             binding.imagePager.setImageResource(board.getImage());
             binding.textTitle.setText(board.getTitle());
-
-//            textTitle.setText(board.getTitle());
-//            textDisc.setText(board.getTitle());
             if (position == list.size() -1 ) {
                 btn_start.setVisibility(View.VISIBLE);
             }else {

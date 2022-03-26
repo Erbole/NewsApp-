@@ -12,6 +12,7 @@
         android:layout_height="200dp"/>
 
     <TextView
+        android:gravity="center_horizontal"
         android:textColor="@color/white"
         android:layout_marginTop="96dp"
         android:layout_marginBottom="32dp"
@@ -22,11 +23,13 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:gravity="center_horizontal"
         android:id="@+id/text_disc"
-        android:textColor="@color/white"
-        android:text="Description"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
 
     <Button
         android:backgroundTint="@color/gray"

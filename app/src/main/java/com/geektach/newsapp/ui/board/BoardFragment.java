@@ -30,18 +30,14 @@ public class BoardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_board, container, false);
+
+        binding = FragmentBoardBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        BoardAdapter adapter = new BoardAdapter();
-//        ViewPager2 viewPager2 = view.findViewById(R.id.viewPager);
-//        viewPager2.setAdapter(adapter);
-//        DotsIndicator dotsIndicator = view.findViewById(R.id.dots_indicator);
-//        dotsIndicator.setViewPager2(viewPager2);
-
         BoardAdapter adapter = new BoardAdapter();
         binding.viewPager.setAdapter(adapter);
         BoardAdapter boardAdapter = new BoardAdapter();
@@ -54,7 +50,6 @@ public class BoardFragment extends Fragment {
                 }else
                 {
                     binding.tvSkip.setVisibility(View.VISIBLE);
-
                 }
             }
         });
@@ -65,7 +60,6 @@ public class BoardFragment extends Fragment {
             }
         });
     }
-
 
     public void navigateUp() {
         Prefs prefs = new Prefs(requireContext());
