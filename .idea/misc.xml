@@ -3,15 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/active_dot.xml" value="0.1495" />
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/bg_splash_skrin.xml" value="0.1465" />
         <entry key="..\:/NewsApp/app/src/main/res/drawable/ic_add.xml" value="0.17" />
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1565" />
         <entry key="..\:/NewsApp/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.17" />
         <entry key="..\:/NewsApp/app/src/main/res/drawable/ic_photi.xml" value="0.178" />
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/ic_profile.xml" value="0.1565" />
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/nonactive_dot.xml" value="0.1495" />
+        <entry key="..\:/NewsApp/app/src/main/res/drawable/open.xml" value="0.1" />
         <entry key="..\:/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_board.xml" value="0.25416666666666665" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.1" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.22" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
         <entry key="..\:/NewsApp/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="..\:/NewsApp/app/src/main/res/layout/item_news.xml" value="0.25416666666666665" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/item_news.xml" value="0.2" />
+        <entry key="..\:/NewsApp/app/src/main/res/layout/item_pager_board.xml" value="0.25416666666666665" />
         <entry key="..\:/NewsApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2" />
+        <entry key="..\:/NewsApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1465" />
       </map>
     </option>
   </component>

@@ -9,12 +9,15 @@
 
     <!-- TODO: Update blank fragment layout -->
     <EditText
+        android:paddingStart="8dp"
+        android:hint="Введите новость!"
         android:layout_marginTop="16dp"
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
+        android:background="@color/gray"
         android:layout_marginTop="16dp"
         android:text="Save"
         android:id="@+id/btnSave"
