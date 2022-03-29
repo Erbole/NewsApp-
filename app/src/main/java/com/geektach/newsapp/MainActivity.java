@@ -3,6 +3,7 @@ package com.geektach.newsapp;
 import android.opengl.ETC1;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -16,8 +17,10 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.viewpager.widget.ViewPager;
 
 import com.geektach.newsapp.databinding.ActivityMainBinding;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private EditText Et;
     private ImageView image;
+    private Object Adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 if (navDestination.getId() == R.id.boardFragment) {
                     binding.navView.setVisibility(View.GONE);
                     getSupportActionBar().hide();
-                }else {
+                } else {
                     binding.navView.setVisibility(View.VISIBLE);
                     getSupportActionBar().show();
                 }

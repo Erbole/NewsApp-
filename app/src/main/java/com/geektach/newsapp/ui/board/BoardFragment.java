@@ -40,6 +40,7 @@ public class BoardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         BoardAdapter adapter = new BoardAdapter();
         binding.viewPager.setAdapter(adapter);
+        binding.dotsIndicator.setViewPager2(binding.viewPager);
         BoardAdapter boardAdapter = new BoardAdapter();
         binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

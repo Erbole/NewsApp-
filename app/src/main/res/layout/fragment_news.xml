@@ -3,12 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ui.NewsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <EditText
+        android:background="@drawable/edit_text_style"
+        android:padding="10dp"
         android:paddingStart="8dp"
         android:hint="Введите новость!"
         android:layout_marginTop="16dp"
@@ -16,12 +19,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:background="@color/gray"
+    <com.google.android.material.button.MaterialButton
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:cornerRadius="8dp"
+        android:backgroundTint="@color/gray"
         android:layout_marginTop="16dp"
         android:text="Save"
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.geektach.newsapp.ui.board;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,10 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.geektach.newsapp.R;
 import com.geektach.newsapp.databinding.ItemPagerBoardBinding;
 import com.geektach.newsapp.models.Board;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.ArrayList;
 
@@ -32,11 +35,13 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemPagerBoardBinding binding = ItemPagerBoardBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
         return new ViewHolder(binding);
+
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bind(position);
+
     }
 
     @Override
@@ -55,6 +60,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
         public ViewHolder(@NonNull ItemPagerBoardBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+
             textDisc = itemView.findViewById(R.id.text_disc);
             textTitle = itemView.findViewById(R.id.textTitle);
             btn_start = itemView.findViewById(R.id.btn_start);

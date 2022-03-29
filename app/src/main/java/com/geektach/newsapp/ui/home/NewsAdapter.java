@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.geektach.newsapp.R;
 import com.geektach.newsapp.databinding.ItemNewsBinding;
@@ -70,6 +71,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
     public void updateItem(News news, int position) {
         list.set(position, news);
         notifyItemChanged(position);
+
     }
 
     public void removeItem(int position) {
@@ -103,7 +105,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
                                     Toast.makeText(view.getContext(), "Delete", Toast.LENGTH_SHORT).show();
                                     list.remove(getAdapterPosition());
                                     notifyDataSetChanged();
-//                                    notifyItemRangeChanged(0, 0);
                                 }
                             }).show();
                     return true;

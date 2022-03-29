@@ -15,11 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.viewpager.widget.ViewPager;
 
 import com.geektach.newsapp.R;
 import com.geektach.newsapp.databinding.FragmentHomeBinding;
 import com.geektach.newsapp.interfaces.OnItemClickListener;
 import com.geektach.newsapp.models.News;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 public class HomeFragment extends Fragment {
 

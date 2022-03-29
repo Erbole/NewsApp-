@@ -48,7 +48,7 @@ public class NewsFragment extends Fragment {
         Bundle bundle = new Bundle();
         String text = binding.editText.getText().toString().trim();
         if (text.isEmpty()) {
-            Toast.makeText(requireContext(), "Введи текст мразь", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Введите текст", Toast.LENGTH_SHORT).show();
             return;
         }if (news == null) {
             news = new News(text, System.currentTimeMillis());
