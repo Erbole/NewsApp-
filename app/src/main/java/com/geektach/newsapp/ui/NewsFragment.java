@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.geektach.newsapp.Prefs;
 import com.geektach.newsapp.R;
 import com.geektach.newsapp.databinding.FragmentHomeBinding;
 import com.geektach.newsapp.databinding.FragmentNewsBinding;
@@ -61,6 +62,8 @@ public class NewsFragment extends Fragment {
     }
 
     private void close() {
+        Prefs prefs = new Prefs(requireContext());
+        prefs.saveBoardState();
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
     }

@@ -60,7 +60,6 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.ViewHolder> 
         public ViewHolder(@NonNull ItemPagerBoardBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-
             textDisc = itemView.findViewById(R.id.text_disc);
             textTitle = itemView.findViewById(R.id.textTitle);
             btn_start = itemView.findViewById(R.id.btn_start);

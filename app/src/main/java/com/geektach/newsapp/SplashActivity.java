@@ -7,15 +7,12 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 
 public class SplashActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new CountDownTimer(300,300){
-
+        new CountDownTimer(200,200){
             @Override
             public void onTick(long l) {
-
             }
 
             @Override
@@ -24,6 +21,5 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }.start();
-
     }
 }

@@ -1,12 +1,17 @@
 package com.geektach.newsapp;
 
+import android.media.Image;
 import android.opengl.ETC1;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.geektach.newsapp.models.News;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -28,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private EditText Et;
     private ImageView image;
-    private Object Adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         Prefs prefs = new Prefs(this);
-        if (true) {
+        if (!prefs.isBoardShown()) {
             navController.navigate(R.id.boardFragment);
         }
 
@@ -65,4 +69,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.clear:
+                prefs.clearPreferences(getApplicationContext());
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_menu_clear, menu);
+        return true ;
+    }
 }
+
